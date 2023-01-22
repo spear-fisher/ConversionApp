@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:id="@+id/metricText"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:padding="15dp"
+        android:text="METRIC"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/imperialText"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:padding="15dp"
+        android:text="IMPERIAL"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/kilometerText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/black_frame"
+        android:hint="km"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/metricText"
+        app:layout_constraintTop_toBottomOf="@+id/metricText" />
+
+    <EditText
+        android:id="@+id/mileText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:hint="mil"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintTop_toBottomOf="@+id/imperialText"
+        app:layout_constraintEnd_toEndOf="@+id/imperialText"  />
+
+    <EditText
+        android:id="@+id/meterText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/black_frame"
+        android:hint="m"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/kilometerText"
+        app:layout_constraintStart_toStartOf="@+id/metricText" />
+
+    <EditText
+        android:id="@+id/yardText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:hint="yd"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintTop_toBottomOf="@+id/mileText"
+        app:layout_constraintEnd_toEndOf="@+id/imperialText"  />
+
+    <EditText
+        android:id="@+id/centimeterText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/black_frame"
+        android:hint="cm"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/meterText"
+        app:layout_constraintStart_toStartOf="@+id/metricText"/>
+
+    <EditText
+        android:id="@+id/inchText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:hint="in"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintTop_toBottomOf="@+id/yardText"
+        app:layout_constraintEnd_toEndOf="@+id/imperialText"  />
+
+    <ImageButton
+        android:id="@+id/lengthButton"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@+id/meterText"
+        app:layout_constraintBottom_toBottomOf="@+id/meterText"
+        app:layout_constraintStart_toEndOf="@+id/meterText"
+        app:layout_constraintEnd_toStartOf="@+id/yardText"
+        android:padding="5dp"
+        android:src="@drawable/arrow"
+        android:scaleType="fitCenter"
+        android:background="@drawable/image_button_bg_2"/>
+
+    <EditText
+        android:id="@+id/kilogramText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/black_frame"
+        android:hint="kg"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/centimeterText"
+        app:layout_constraintStart_toStartOf="@+id/metricText"/>
+
+    <EditText
+        android:id="@+id/poundText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:hint="pd"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintTop_toBottomOf="@+id/inchText"
+        app:layout_constraintEnd_toEndOf="@+id/imperialText"/>
+
+    <EditText
+        android:id="@+id/gramText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/black_frame"
+        android:hint="g"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/kilogramText"
+        app:layout_constraintStart_toStartOf="@+id/metricText"/>
+
+    <EditText
+        android:id="@+id/ounceText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:hint="oz"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintTop_toBottomOf="@+id/poundText"
+        app:layout_constraintEnd_toEndOf="@+id/imperialText"/>
+
+    <ImageButton
+        android:id="@+id/weightButton"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/kilogramText"
+        app:layout_constraintBottom_toTopOf="@+id/gramText"
+        app:layout_constraintStart_toEndOf="@+id/kilogramText"
+        app:layout_constraintEnd_toStartOf="@+id/poundText"
+        android:padding="5dp"
+        android:src="@drawable/arrow"
+        android:scaleType="fitCenter"
+        android:background="@drawable/image_button_bg_2"/>
+
+    <EditText
+        android:id="@+id/literText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/black_frame"
+        android:hint="l"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/gramText"
+        app:layout_constraintStart_toStartOf="@+id/metricText"/>
+
+    <EditText
+        android:id="@+id/quartText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:hint="qt"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintTop_toBottomOf="@+id/ounceText"
+        app:layout_constraintEnd_toEndOf="@+id/imperialText"/>
+
+    <EditText
+        android:id="@+id/milliliterText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/black_frame"
+        android:hint="ml"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/literText"
+        app:layout_constraintStart_toStartOf="@+id/metricText"/>
+
+    <EditText
+        android:id="@+id/fluidOunceText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:hint="fl oz"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintTop_toBottomOf="@+id/quartText"
+        app:layout_constraintEnd_toEndOf="@+id/imperialText"/>
+
+    <ImageButton
+        android:id="@+id/volumeButton"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/literText"
+        app:layout_constraintBottom_toTopOf="@+id/milliliterText"
+        app:layout_constraintStart_toEndOf="@+id/literText"
+        app:layout_constraintEnd_toStartOf="@+id/quartText"
+        android:padding="5dp"
+        android:src="@drawable/arrow"
+        android:scaleType="fitCenter"
+        android:background="@drawable/image_button_bg_2"/>
+
+    <EditText
+        android:id="@+id/celsiusText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/black_frame"
+        android:hint="°C"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/milliliterText"
+        app:layout_constraintStart_toStartOf="@+id/metricText"/>
+
+    <EditText
+        android:id="@+id/fahrenheitText"
+        android:inputType="numberDecimal"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:hint="°F"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintTop_toBottomOf="@+id/fluidOunceText"
+        app:layout_constraintEnd_toEndOf="@+id/imperialText"/>
+
+    <ImageButton
+        android:id="@+id/temperatureButton"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@+id/celsiusText"
+        app:layout_constraintBottom_toBottomOf="@+id/fahrenheitText"
+        app:layout_constraintStart_toEndOf="@+id/celsiusText"
+        app:layout_constraintEnd_toStartOf="@+id/fahrenheitText"
+        android:padding="5dp"
+        android:src="@drawable/arrow"
+        android:scaleType="fitCenter"
+        android:background="@drawable/image_button_bg_2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

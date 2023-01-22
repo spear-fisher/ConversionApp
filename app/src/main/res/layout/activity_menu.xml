@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+        <ImageButton
+            android:id="@+id/calendarButton"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/timeButton"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/calendar"
+            android:scaleType="fitCenter"
+            android:padding="15dp"
+            android:background="@drawable/image_button_bg"/>
+
+        <ImageButton
+            android:id="@+id/timeButton"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calendarButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/time"
+            android:scaleType="fitCenter"
+            android:padding="15dp"
+            android:background="@drawable/image_button_bg" />
+
+        <ImageButton
+            android:id="@+id/phoneButton"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintTop_toBottomOf="@+id/calendarButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/measureButton"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/phone"
+            android:scaleType="fitCenter"
+            android:padding="15dp"
+            android:background="@drawable/image_button_bg"/>
+
+        <ImageButton
+            android:id="@+id/measureButton"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintTop_toBottomOf="@+id/timeButton"
+            app:layout_constraintStart_toEndOf="@+id/phoneButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/measure"
+            android:scaleType="fitCenter"
+            android:padding="15dp"
+            android:background="@drawable/image_button_bg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
