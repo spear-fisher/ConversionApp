@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'spearfisher.conversionapp'
+    namespace 'io.github.spearfisher.conversionapp'
     compileSdk 32
 
     defaultConfig {
-        applicationId "spearfisher.conversionapp"
+        applicationId "io.github.spearfisher.conversionapp"
         minSdk 26
         targetSdk 32
         versionCode 1
