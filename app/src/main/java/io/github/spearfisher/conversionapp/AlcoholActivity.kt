@@ -1,25 +1,19 @@
-package spearfisher.conversionapp
+package io.github.spearfisher.conversionapp
 
 import android.R
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
-import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
-import androidx.core.widget.doAfterTextChanged
-import com.google.android.material.snackbar.Snackbar
 import io.realm.Realm
-import io.realm.Sort
 import spearfisher.conversionapp.databinding.ActivityAlcoholBinding
 
 class AlcoholActivity : AppCompatActivity() {
@@ -31,7 +25,6 @@ class AlcoholActivity : AppCompatActivity() {
     private var bodyWeight = 70.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d("DebugLog", "openAlcoholActivity")
         super.onCreate(savedInstanceState)
         binding = ActivityAlcoholBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -42,8 +35,6 @@ class AlcoholActivity : AppCompatActivity() {
         if(physicalDataRealmResults != null) {
             bodyWeight = physicalDataRealmResults?.bodyWeight
         }
-        Log.d("DebugLog", "bodyWeight: ${bodyWeight}")
-        Log.d("DebugLog", "physicalDataRealmResults: ${physicalDataRealmResults}")
 
         val spinnerItems = arrayOf(0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0)
         val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, spinnerItems)

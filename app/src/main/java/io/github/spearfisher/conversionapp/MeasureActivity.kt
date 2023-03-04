@@ -1,4 +1,4 @@
-package spearfisher.conversionapp
+package io.github.spearfisher.conversionapp
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import com.google.android.material.snackbar.Snackbar
+import spearfisher.conversionapp.R
 import spearfisher.conversionapp.databinding.ActivityMeasureBinding
 
 class MeasureActivity : AppCompatActivity() {

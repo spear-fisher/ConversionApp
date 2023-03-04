@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".EntryActivity">
+    tools:context="io.github.spearfisher.conversionapp.EntryActivity">
 
     <TextView
         android:id="@+id/SettingText"

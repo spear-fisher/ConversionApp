@@ -1,24 +1,21 @@
-package spearfisher.conversionapp
+package io.github.spearfisher.conversionapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ListView
 import io.realm.Realm
-import io.realm.RealmChangeListener
 import io.realm.Sort
-import spearfisher.conversionapp.databinding.ActivityShoesBinding
+import spearfisher.conversionapp.databinding.ActivityCalendarBinding
 
-class ShoesActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityShoesBinding
-    private lateinit var mAdapter: ShoesAdapter
+class CalendarActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityCalendarBinding
+    private lateinit var mAdapter: CalendarAdapter
     lateinit var mRealm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        binding = ActivityShoesBinding.inflate(layoutInflater)
+        binding = ActivityCalendarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.home.setOnClickListener {
@@ -35,16 +32,17 @@ class ShoesActivity : AppCompatActivity() {
         mRealm = Realm.getDefaultInstance()
 
         // ListViewの設定
-        mAdapter = ShoesAdapter(this)
+        mAdapter = CalendarAdapter(this)
 
         // Realmデータベースから、「すべてのデータを取得してage順に並べた結果」を取得
-        val shoesRealmResults = mRealm.where(Shoes::class.java).findAll().sort("id", Sort.ASCENDING)
+        val calendarRealmResults = mRealm.where(Calendar::class.java).findAll().sort("age", Sort.ASCENDING)
 
-        // 上記の結果を、ShoesListとしてセットする
-        mAdapter.mShoesList = mRealm.copyFromRealm(shoesRealmResults)
+        // 上記の結果を、CalendarListとしてセットする
+        mAdapter.mCalendarList = mRealm.copyFromRealm(calendarRealmResults)
 
-        // ShoesのListView用のアダプタに渡す
+        // CalendarのListView用のアダプタに渡す
         binding.listView.adapter = mAdapter
+        binding.listView.setSelection(45)
 
         // 表示を更新するために、アダプターにデータが変更されたことを知らせる
         mAdapter.notifyDataSetChanged()

@@ -1,4 +1,4 @@
-package spearfisher.conversionapp
+package io.github.spearfisher.conversionapp
 
 import java.io.Serializable
 import io.realm.RealmObject

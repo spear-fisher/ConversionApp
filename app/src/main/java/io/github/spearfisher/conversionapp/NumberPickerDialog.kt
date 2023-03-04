@@ -1,4 +1,4 @@
-package spearfisher.conversionapp
+package io.github.spearfisher.conversionapp
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.NumberPicker
 import androidx.fragment.app.DialogFragment
+import spearfisher.conversionapp.R
 
 class NumberPickerDialog: DialogFragment(), NumberPicker.OnValueChangeListener  {
 

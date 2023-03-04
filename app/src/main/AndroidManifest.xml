@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".ConversionApp"
+        android:name="io.github.spearfisher.conversionapp.ConversionApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,7 +15,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".MeasureActivity"
+            android:name="io.github.spearfisher.conversionapp.MeasureActivity"
             android:exported="false"
             android:theme="@style/Theme.ConversionApp.NoActionBar">
             <meta-data
@@ -24,7 +24,7 @@
         </activity>
 
         <activity
-            android:name=".CalendarActivity"
+            android:name="io.github.spearfisher.conversionapp.CalendarActivity"
             android:exported="false"
             android:theme="@style/Theme.ConversionApp.NoActionBar">
             <meta-data
@@ -33,7 +33,7 @@
         </activity>
 
         <activity
-            android:name=".ShoesActivity"
+            android:name="io.github.spearfisher.conversionapp.ShoesActivity"
             android:exported="false"
             android:theme="@style/Theme.ConversionApp.NoActionBar">
             <meta-data
@@ -42,7 +42,7 @@
         </activity>
 
         <activity
-            android:name=".AlcoholActivity"
+            android:name="io.github.spearfisher.conversionapp.AlcoholActivity"
             android:exported="false"
             android:theme="@style/Theme.ConversionApp.NoActionBar">
             <meta-data
@@ -51,7 +51,7 @@
         </activity>
 
         <activity
-            android:name=".MenuActivity"
+            android:name="io.github.spearfisher.conversionapp.MenuActivity"
             android:exported="false"
             android:theme="@style/Theme.ConversionApp.NoActionBar">
             <meta-data
@@ -60,7 +60,7 @@
         </activity>
 
         <activity
-            android:name=".EntryActivity"
+            android:name="io.github.spearfisher.conversionapp.EntryActivity"
             android:exported="false"
             android:theme="@style/Theme.ConversionApp.NoActionBar">
             <meta-data
@@ -69,7 +69,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name="io.github.spearfisher.conversionapp.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.ConversionApp.NoActionBar">
             <intent-filter>
