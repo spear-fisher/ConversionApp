@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ConversionApp</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="birth_year">誕生年</string>
+    <string name="shoe_size">靴のサイズ</string>
+    <string name="body_weight">体重</string>
+    <string name="setting_footnote">*これらの情報は端末内にのみ保存されます</string>
+
+    <string name="metric">メートル法</string>
+    <string name="imperial">ヤード法</string>
+
+    <string name="age">年齢</string>
+    <string name="ad">西暦</string>
+    <string name="jp1">和</string>
+    <string name="jp2">歴</string>
+
+    <string name="total_alcohol">純アルコール摂取量</string>
+    <string name="blood_alcohol">血中アルコール濃度</string>
+    <string name="decomposition_time">分解所要時間</string>
+
+</resources>
