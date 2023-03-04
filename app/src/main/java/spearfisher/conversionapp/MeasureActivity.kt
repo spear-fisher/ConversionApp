@@ -1,6 +1,7 @@
 package spearfisher.conversionapp
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +22,16 @@ class MeasureActivity : AppCompatActivity() {
         var weightState = 0
         var volumeState = 0
         var temperatureState = 0
+
+        binding.home.setOnClickListener {
+            val intent = Intent(applicationContext, MenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.setting.setOnClickListener {
+            val intent = Intent(applicationContext, EntryActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.lengthButton.setOnClickListener {
             // close keyboard
@@ -92,51 +103,81 @@ class MeasureActivity : AppCompatActivity() {
                         .make(root, "一項目のみ入力してくだい", Snackbar.LENGTH_LONG)
                         .show()
                 } else if (kilometerVal == 1) {
-                    binding.mileText.setText((kilometer * 0.621371).toString())
-                    binding.meterText.setText((kilometer * 1000).toString())
-                    binding.yardText.setText((kilometer * 1093.61).toString())
-                    binding.centimeterText.setText((kilometer * 100000).toString())
-                    binding.inchText.setText((kilometer * 393700).toString())
+                    val mileView = Math.round((kilometer * 0.621371)*1000.0)/1000.0
+                    val meterView = Math.round((kilometer * 1000)*100.0)/100.0
+                    val yardView = Math.round((kilometer * 1093.61)*100.0)/100.0
+                    val centimeterView = Math.round((kilometer * 100000)*100.0)/100.0
+                    val inchView = Math.round((kilometer * 393700)*100.0)/100.0
+                    binding.mileText.setText(mileView.toString())
+                    binding.meterText.setText(meterView.toString())
+                    binding.yardText.setText(yardView.toString())
+                    binding.centimeterText.setText(centimeterView.toString())
+                    binding.inchText.setText(inchView.toString())
                     binding.lengthButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.lengthButton.setImageResource(R.drawable.delete)
                 } else if (mileVal == 1) {
-                    binding.kilometerText.setText((mile * 1.60934).toString())
-                    binding.meterText.setText((mile * 1609.34).toString())
-                    binding.yardText.setText((mile * 1760).toString())
-                    binding.centimeterText.setText((mile * 160934).toString())
-                    binding.inchText.setText((mile * 63360).toString())
+                    val kilometerView = Math.round((mile * 1.60934)*1000.0)/1000.0
+                    val meterView = Math.round((mile * 1609.34)*100.0)/100.0
+                    val yardView = Math.round((mile * 1760)*100.0)/100.0
+                    val centimeterView = Math.round((mile * 160934)*100.0)/100.0
+                    val inchView = Math.round((mile * 63360)*100.0)/100.0
+                    binding.kilometerText.setText(kilometerView.toString())
+                    binding.meterText.setText(meterView.toString())
+                    binding.yardText.setText(yardView.toString())
+                    binding.centimeterText.setText(centimeterView.toString())
+                    binding.inchText.setText(inchView.toString())
                     binding.lengthButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.lengthButton.setImageResource(R.drawable.delete)
                 } else if (meterVal == 1) {
-                    binding.kilometerText.setText((meter * 0.001).toString())
-                    binding.mileText.setText((meter * 0.000621371).toString())
-                    binding.yardText.setText((meter * 1.09361).toString())
-                    binding.centimeterText.setText((meter * 100).toString())
-                    binding.inchText.setText((meter * 39.37).toString())
+                    val kilometerView = Math.round((meter * 0.001)*1000.0)/1000.0
+                    val mileView = Math.round((meter * 0.000621371)*1000.0)/1000.0
+                    val yardView = Math.round((meter * 1.09361)*100.0)/100.0
+                    val centimeterView = Math.round((meter * 100)*100.0)/100.0
+                    val inchView = Math.round((meter * 39.37)*100.0)/100.0
+                    binding.kilometerText.setText(kilometerView.toString())
+                    binding.mileText.setText(mileView.toString())
+                    binding.yardText.setText(yardView.toString())
+                    binding.centimeterText.setText(centimeterView.toString())
+                    binding.inchText.setText(inchView.toString())
                     binding.lengthButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.lengthButton.setImageResource(R.drawable.delete)
                 } else if (yardVal == 1) {
-                    binding.kilometerText.setText((yard * 0.0009144).toString())
-                    binding.mileText.setText((yard * 0.000568182).toString())
-                    binding.meterText.setText((yard * 0.9144).toString())
-                    binding.centimeterText.setText((yard * 91.44).toString())
-                    binding.inchText.setText((yard * 36).toString())
+                    val kilometerView = Math.round((yard * 0.0009144)*1000.0)/1000.0
+                    val mileView = Math.round((yard * 0.000568182)*1000.0)/1000.0
+                    val meterView = Math.round((yard * 0.9144)*100.0)/100.0
+                    val centimeterView = Math.round((yard * 91.44)*100.0)/100.0
+                    val inchView = Math.round((yard * 36)*100.0)/100.0
+                    binding.kilometerText.setText(kilometerView.toString())
+                    binding.mileText.setText(mileView.toString())
+                    binding.meterText.setText(meterView.toString())
+                    binding.centimeterText.setText(centimeterView.toString())
+                    binding.inchText.setText(inchView.toString())
                     binding.lengthButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.lengthButton.setImageResource(R.drawable.delete)
                 } else if (centimeterVal == 1) {
-                    binding.kilometerText.setText((centimeter * 0.00001).toString())
-                    binding.mileText.setText((centimeter * 0.00000621371).toString())
-                    binding.meterText.setText((centimeter * 0.01).toString())
-                    binding.yardText.setText((centimeter * 0.0109361).toString())
-                    binding.inchText.setText((centimeter * 0.3937).toString())
+                    val kilometerView = Math.round((centimeter * 0.00001)*1000.0)/1000.0
+                    val mileView = Math.round((centimeter * 0.00000621371)*1000.0)/1000.0
+                    val meterView = Math.round((centimeter * 0.01)*100.0)/100.0
+                    val yardView = Math.round((centimeter * 0.0109361)*100.0)/100.0
+                    val inchView = Math.round((centimeter * 0.3937)*100.0)/100.0
+                    binding.kilometerText.setText(kilometerView.toString())
+                    binding.mileText.setText(mileView.toString())
+                    binding.meterText.setText(meterView.toString())
+                    binding.yardText.setText(yardView.toString())
+                    binding.inchText.setText(inchView.toString())
                     binding.lengthButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.lengthButton.setImageResource(R.drawable.delete)
                 } else if (inchVal == 1) {
-                    binding.kilometerText.setText((inch * 0.000254).toString())
-                    binding.mileText.setText((inch * 0.0001578283).toString())
-                    binding.meterText.setText((inch * 0.0254).toString())
-                    binding.yardText.setText((inch * 0.0277778).toString())
-                    binding.centimeterText.setText((inch * 2.54).toString())
+                    val kilometerView = Math.round((inch * 0.000254)*100.0)/100.0
+                    val mileView = Math.round((inch * 0.0001578283)*100.0)/100.0
+                    val meterView = Math.round((inch * 0.0254)*100.0)/100.0
+                    val yardView = Math.round((inch * 0.0277778)*100.0)/100.0
+                    val centimeterView = Math.round((inch * 2.54)*100.0)/100.0
+                    binding.kilometerText.setText(kilometerView.toString())
+                    binding.mileText.setText(mileView.toString())
+                    binding.meterText.setText(meterView.toString())
+                    binding.yardText.setText(yardView.toString())
+                    binding.centimeterText.setText(centimeterView.toString())
                     binding.lengthButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.lengthButton.setImageResource(R.drawable.delete)
                 }
@@ -197,27 +238,39 @@ class MeasureActivity : AppCompatActivity() {
                         .make(root, "一項目のみ入力してくだい", Snackbar.LENGTH_LONG)
                         .show()
                 } else if (kilogramVal == 1) {
-                    binding.poundText.setText((kilogram * 2.20462).toString())
-                    binding.gramText.setText((kilogram * 1000).toString())
-                    binding.ounceText.setText((kilogram * 35.274).toString())
+                    val poundView = Math.round((kilogram * 2.20462)*1000.0)/1000.0
+                    val gramView = Math.round((kilogram * 1000)*100.0)/100.0
+                    val ounceView = Math.round((kilogram * 35.274)*100.0)/100.0
+                    binding.poundText.setText(poundView.toString())
+                    binding.gramText.setText(gramView.toString())
+                    binding.ounceText.setText(ounceView.toString())
                     binding.weightButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.weightButton.setImageResource(R.drawable.delete)
                 } else if (poundVal == 1) {
-                    binding.kilogramText.setText((pound * 0.453592).toString())
-                    binding.gramText.setText((pound * 453.592).toString())
-                    binding.ounceText.setText((pound * 16).toString())
+                    val kilogramView = Math.round((pound * 0.453592)*1000.0)/1000.0
+                    val gramView = Math.round((pound * 453.592)*100.0)/100.0
+                    val ounceView = Math.round((pound * 16)*100.0)/100.0
+                    binding.kilogramText.setText(kilogramView.toString())
+                    binding.gramText.setText(gramView.toString())
+                    binding.ounceText.setText(ounceView.toString())
                     binding.weightButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.weightButton.setImageResource(R.drawable.delete)
                 } else if (gramVal == 1) {
-                    binding.kilogramText.setText((gram * 0.001).toString())
-                    binding.poundText.setText((gram * 0.00220462).toString())
-                    binding.ounceText.setText((gram * 0.035274).toString())
+                    val kilogramView = Math.round((gram * 0.001)*1000.0)/1000.0
+                    val poundView = Math.round((gram * 0.00220462)*1000.0)/1000.0
+                    val ounceView = Math.round((gram * 0.035274)*100.0)/100.0
+                    binding.kilogramText.setText(kilogramView.toString())
+                    binding.poundText.setText(poundView.toString())
+                    binding.ounceText.setText(ounceView.toString())
                     binding.weightButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.weightButton.setImageResource(R.drawable.delete)
                 } else if (ounceVal == 1) {
-                    binding.kilogramText.setText((ounce * 0.0283495).toString())
-                    binding.poundText.setText((ounce * 0.0625).toString())
-                    binding.gramText.setText((ounce * 28.3495).toString())
+                    val kilogramView = Math.round((ounce * 0.0283495)*1000.0)/1000.0
+                    val poundView = Math.round((ounce * 0.0625)*1000.0)/1000.0
+                    val gramView = Math.round((ounce * 28.3495)*100.0)/100.0
+                    binding.kilogramText.setText(kilogramView.toString())
+                    binding.poundText.setText(poundView.toString())
+                    binding.gramText.setText(gramView.toString())
                     binding.weightButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.weightButton.setImageResource(R.drawable.delete)
                 }
@@ -278,27 +331,39 @@ class MeasureActivity : AppCompatActivity() {
                         .make(root, "一項目のみ入力してくだい", Snackbar.LENGTH_LONG)
                         .show()
                 } else if (literVal == 1) {
-                    binding.quartText.setText((liter * 1.05669).toString())
-                    binding.milliliterText.setText((liter * 1000).toString())
-                    binding.fluidOunceText.setText((liter * 33.814).toString())
+                    val quartView = Math.round((liter * 1.05669)*1000.0)/1000.0
+                    val milliliterView = Math.round((liter * 1000)*100.0)/100.0
+                    val fluidOunceView = Math.round((liter * 33.814)*100.0)/100.0
+                    binding.quartText.setText(quartView.toString())
+                    binding.milliliterText.setText(milliliterView.toString())
+                    binding.fluidOunceText.setText(fluidOunceView.toString())
                     binding.volumeButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.volumeButton.setImageResource(R.drawable.delete)
                 } else if (quartVal == 1) {
-                    binding.literText.setText((quart * 0.946353).toString())
-                    binding.milliliterText.setText((quart * 946.353).toString())
-                    binding.fluidOunceText.setText((quart * 32).toString())
+                    val literView = Math.round((quart * 0.946353)*1000.0)/1000.0
+                    val milliliterView = Math.round((quart * 946.353)*100.0)/100.0
+                    val fluidOunceView = Math.round((quart * 32)*100.0)/100.0
+                    binding.literText.setText(literView.toString())
+                    binding.milliliterText.setText(milliliterView.toString())
+                    binding.fluidOunceText.setText(fluidOunceView.toString())
                     binding.volumeButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.volumeButton.setImageResource(R.drawable.delete)
                 } else if (milliliterVal == 1) {
-                    binding.literText.setText((milliliter * 0.001).toString())
-                    binding.quartText.setText((milliliter * 0.00105669).toString())
-                    binding.fluidOunceText.setText((milliliter * 0.033814).toString())
+                    val literView = Math.round((milliliter * 0.001)*1000.0)/1000.0
+                    val quartView = Math.round((milliliter * 0.00105669)*1000.0)/1000.0
+                    val fluidOunceView = Math.round((milliliter * 0.033814)*100.0)/100.0
+                    binding.literText.setText(literView.toString())
+                    binding.quartText.setText(quartView.toString())
+                    binding.fluidOunceText.setText(fluidOunceView.toString())
                     binding.volumeButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.volumeButton.setImageResource(R.drawable.delete)
                 } else if (fluidOunceVal == 1) {
-                    binding.literText.setText((fluidOunce * 0.0295735).toString())
-                    binding.quartText.setText((fluidOunce * 0.03125).toString())
-                    binding.milliliterText.setText((fluidOunce * 0.0000295735).toString())
+                    val literView = Math.round((fluidOunce * 0.0295735)*1000.0)/1000.0
+                    val quartView = Math.round((fluidOunce * 0.03125)*1000.0)/1000.0
+                    val milliliterView = Math.round((fluidOunce * 0.0000295735)*100.0)/100.0
+                    binding.literText.setText(literView.toString())
+                    binding.quartText.setText(quartView.toString())
+                    binding.milliliterText.setText(milliliterView.toString())
                     binding.volumeButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.volumeButton.setImageResource(R.drawable.delete)
                 }
@@ -343,11 +408,13 @@ class MeasureActivity : AppCompatActivity() {
                         .make(root, "一項目のみ入力してくだい", Snackbar.LENGTH_LONG)
                         .show()
                 } else if (celsiusVal == 1) {
-                    binding.fahrenheitText.setText(((celsius * 1.8) + 32).toString())
+                    val fahrenheitView = Math.round(((celsius * 1.8) + 32) * 10.0) / 10.0
+                    binding.fahrenheitText.setText(fahrenheitView.toString())
                     binding.temperatureButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.temperatureButton.setImageResource(R.drawable.delete)
                 } else if (fahrenheitVal == 1) {
-                    binding.celsiusText.setText(((fahrenheit - 32)* 0.5556).toString())
+                    val celsiusView = Math.round(((fahrenheit - 32)* 0.5556)* 10.0) / 10.0
+                    binding.celsiusText.setText(celsiusView.toString())
                     binding.temperatureButton.setBackgroundResource(R.drawable.image_button_bg_3)
                     binding.temperatureButton.setImageResource(R.drawable.delete)
                 }

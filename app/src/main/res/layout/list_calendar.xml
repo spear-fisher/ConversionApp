@@ -6,58 +6,48 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <!--
-    <TextView
-        android:id="@+id/idTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-    -->
-
     <TextView
         android:id="@+id/ageTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="20dp"
         android:text="0"
         android:textSize="14sp"
+        android:gravity="center_horizontal"
         android:layout_marginTop="0dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="40dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/westernYearTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="20dp"
         android:text="1988"
         android:textSize="14sp"
+        android:gravity="center_horizontal"
         app:layout_constraintTop_toTopOf="@+id/ageTextView"
         app:layout_constraintStart_toEndOf="@+id/ageTextView"
         app:layout_constraintEnd_toStartOf="@+id/japaneseEraTextView"/>
 
     <TextView
         android:id="@+id/japaneseEraTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="20dp"
         android:text="年号"
         android:textSize="14sp"
         app:layout_constraintTop_toTopOf="@+id/ageTextView"
-        app:layout_constraintStart_toEndOf="@+id/westernYearTextView"
-        app:layout_constraintEnd_toStartOf="@+id/japaneseYearTextView"/>
+        app:layout_constraintEnd_toStartOf="@+id/japaneseYearTextView"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
 
     <TextView
         android:id="@+id/japaneseYearTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="20dp"
         android:layout_height="20dp"
         android:text="63"
         android:textSize="14sp"
+        android:gravity="right"
+        android:layout_marginEnd="40dp"
         app:layout_constraintTop_toTopOf="@+id/ageTextView"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

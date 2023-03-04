@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/beerInput"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/wineInput">
+
+        <ImageView
+            android:id="@+id/beerBg"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/beerText"
+            app:layout_constraintEnd_toEndOf="@id/beerImage"
+            app:layout_constraintStart_toStartOf="@id/beerImage"
+            app:layout_constraintTop_toTopOf="@+id/beerImage"
+            android:background="@drawable/rounded_bg_4"/>
+
+        <ImageView
+            android:id="@+id/beerImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/beer"
+            app:layout_constraintBottom_toTopOf="@+id/beerText"
+            app:layout_constraintEnd_toStartOf="@id/beerBottleImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/beerText"
+            android:layout_width="60dp"
+            android:layout_height="18dp"
+            android:gravity="center"
+            android:text="beer"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/beerImage"
+            app:layout_constraintTop_toBottomOf="@+id/beerImage" />
+
+        <ImageView
+            android:id="@+id/beerBottleImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/beer_bottle"
+            app:layout_constraintEnd_toStartOf="@id/beerBottleX"
+            app:layout_constraintStart_toEndOf="@id/beerImage"
+            app:layout_constraintTop_toTopOf="@id/beerImage" />
+
+        <TextView
+            android:id="@+id/beerBottleText"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="500ml"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/beerBottleImage"
+            app:layout_constraintStart_toStartOf="@id/beerBottleImage" />
+
+        <TextView
+            android:id="@+id/beerBottleX"
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/beerBottleText"
+            app:layout_constraintEnd_toStartOf="@id/beerBottleQty"
+            app:layout_constraintStart_toEndOf="@id/beerBottleImage"
+            app:layout_constraintTop_toTopOf="@id/beerBottleImage" />
+
+        <Spinner
+            android:id="@+id/beerBottleQty"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/beerBottleText"
+            app:layout_constraintEnd_toStartOf="@id/beerMugImage"
+            app:layout_constraintStart_toEndOf="@id/beerBottleX"
+            app:layout_constraintTop_toTopOf="@id/beerBottleImage" />
+
+        <ImageView
+            android:id="@+id/beerMugImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/beer_mug"
+            app:layout_constraintEnd_toStartOf="@id/beerMugX"
+            app:layout_constraintStart_toEndOf="@id/beerBottleQty"
+            app:layout_constraintTop_toTopOf="@id/beerImage" />
+
+        <TextView
+            android:id="@+id/beerMugText"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="350ml"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/beerMugImage"
+            app:layout_constraintStart_toStartOf="@id/beerMugImage"/>
+
+        <TextView
+            android:id="@+id/beerMugX"
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/beerMugText"
+            app:layout_constraintStart_toEndOf="@id/beerMugImage"
+            app:layout_constraintEnd_toStartOf="@+id/beerMugQty"
+            app:layout_constraintTop_toTopOf="@id/beerMugImage"/>
+
+        <Spinner
+            android:id="@+id/beerMugQty"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/beerMugText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/beerMugX"
+            app:layout_constraintTop_toTopOf="@id/beerMugImage"/>
+
+        <EditText
+            android:id="@+id/beerQty"
+            android:inputType="number"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/beerText"
+            app:layout_constraintEnd_toStartOf="@+id/beerMl"
+            app:layout_constraintStart_toStartOf="@id/beerBottleImage" />
+
+        <TextView
+            android:id="@+id/beerMl"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="ml"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/beerQty"
+            app:layout_constraintTop_toTopOf="@id/beerQty"/>
+
+        <EditText
+            android:id="@+id/beerPercentage"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/beerText"
+            app:layout_constraintEnd_toStartOf="@+id/beerPt"
+            app:layout_constraintStart_toStartOf="@id/beerMugImage" />
+
+        <TextView
+            android:id="@+id/beerPt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="%"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/beerPercentage"
+            app:layout_constraintTop_toTopOf="@id/beerPercentage"/>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wineInput"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/beerInput"
+        app:layout_constraintBottom_toTopOf="@+id/sakeInput">
+
+        <ImageView
+            android:id="@+id/wineBg"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/wineText"
+            app:layout_constraintEnd_toEndOf="@id/wineImage"
+            app:layout_constraintStart_toStartOf="@id/wineImage"
+            app:layout_constraintTop_toTopOf="@+id/wineImage"
+            android:background="@drawable/rounded_bg_4"/>
+
+        <ImageView
+            android:id="@+id/wineImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/wine"
+            app:layout_constraintBottom_toTopOf="@+id/wineText"
+            app:layout_constraintEnd_toStartOf="@id/wineBottleImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/wineText"
+            android:layout_width="60dp"
+            android:layout_height="18dp"
+            android:gravity="center"
+            android:text="wine"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/wineImage"
+            app:layout_constraintTop_toBottomOf="@+id/wineImage" />
+
+        <ImageView
+            android:id="@+id/wineBottleImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/wine_bottle"
+            app:layout_constraintEnd_toStartOf="@id/wineBottleX"
+            app:layout_constraintStart_toEndOf="@id/wineImage"
+            app:layout_constraintTop_toTopOf="@id/wineImage" />
+
+        <TextView
+            android:id="@+id/wineBottleText"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="750ml"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/wineBottleImage"
+            app:layout_constraintStart_toStartOf="@id/wineBottleImage" />
+
+        <TextView
+            android:id="@+id/wineBottleX"
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/wineBottleText"
+            app:layout_constraintEnd_toStartOf="@id/wineBottleQty"
+            app:layout_constraintStart_toEndOf="@id/wineBottleImage"
+            app:layout_constraintTop_toTopOf="@id/wineBottleImage" />
+
+        <Spinner
+            android:id="@+id/wineBottleQty"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/wineBottleText"
+            app:layout_constraintEnd_toStartOf="@id/wineGlassImage"
+            app:layout_constraintStart_toEndOf="@id/wineBottleX"
+            app:layout_constraintTop_toTopOf="@id/wineBottleImage" />
+
+        <ImageView
+            android:id="@+id/wineGlassImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/wine_glass"
+            app:layout_constraintEnd_toStartOf="@id/wineGlassX"
+            app:layout_constraintStart_toEndOf="@id/wineBottleQty"
+            app:layout_constraintTop_toTopOf="@id/wineImage" />
+
+        <TextView
+            android:id="@+id/wineGlassText"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="125ml"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/wineGlassImage"
+            app:layout_constraintStart_toStartOf="@id/wineGlassImage"/>
+
+        <TextView
+            android:id="@+id/wineGlassX"
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/wineGlassText"
+            app:layout_constraintStart_toEndOf="@id/wineGlassImage"
+            app:layout_constraintEnd_toStartOf="@+id/wineGlassQty"
+            app:layout_constraintTop_toTopOf="@id/wineGlassImage"/>
+
+        <Spinner
+            android:id="@+id/wineGlassQty"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/wineGlassText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/wineGlassX"
+            app:layout_constraintTop_toTopOf="@id/wineGlassImage"/>
+
+        <EditText
+            android:id="@+id/wineQty"
+            android:inputType="number"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/wineText"
+            app:layout_constraintEnd_toStartOf="@+id/wineMl"
+            app:layout_constraintStart_toStartOf="@id/wineBottleImage" />
+
+        <TextView
+            android:id="@+id/wineMl"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="ml"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/wineQty"
+            app:layout_constraintTop_toTopOf="@id/wineQty"/>
+
+        <EditText
+            android:id="@+id/winePercentage"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/wineText"
+            app:layout_constraintEnd_toStartOf="@+id/winePt"
+            app:layout_constraintStart_toStartOf="@id/wineGlassImage" />
+
+        <TextView
+            android:id="@+id/winePt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="%"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/winePercentage"
+            app:layout_constraintTop_toTopOf="@id/winePercentage"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sakeInput"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wineInput"
+        app:layout_constraintBottom_toTopOf="@+id/liquorInput">
+
+        <ImageView
+            android:id="@+id/sakeBg"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/sakeText"
+            app:layout_constraintEnd_toEndOf="@id/sakeImage"
+            app:layout_constraintStart_toStartOf="@id/sakeImage"
+            app:layout_constraintTop_toTopOf="@+id/sakeImage"
+            android:background="@drawable/rounded_bg_4"/>
+
+        <ImageView
+            android:id="@+id/sakeImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/sake"
+            app:layout_constraintBottom_toTopOf="@+id/sakeText"
+            app:layout_constraintEnd_toStartOf="@id/sakeBottleImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sakeText"
+            android:layout_width="60dp"
+            android:layout_height="18dp"
+            android:gravity="center"
+            android:text="sake"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sakeImage"
+            app:layout_constraintTop_toBottomOf="@+id/sakeImage" />
+
+        <ImageView
+            android:id="@+id/sakeBottleImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/wine_bottle"
+            app:layout_constraintEnd_toStartOf="@id/sakeBottleX"
+            app:layout_constraintStart_toEndOf="@id/sakeImage"
+            app:layout_constraintTop_toTopOf="@id/sakeImage" />
+
+        <TextView
+            android:id="@+id/sakeBottleText"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="1800ml"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/sakeBottleImage"
+            app:layout_constraintStart_toStartOf="@id/sakeBottleImage" />
+
+        <TextView
+            android:id="@+id/sakeBottleX"
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/sakeBottleText"
+            app:layout_constraintEnd_toStartOf="@id/sakeBottleQty"
+            app:layout_constraintStart_toEndOf="@id/sakeBottleImage"
+            app:layout_constraintTop_toTopOf="@id/sakeBottleImage" />
+
+        <Spinner
+            android:id="@+id/sakeBottleQty"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/sakeBottleText"
+            app:layout_constraintEnd_toStartOf="@id/sakeTokkuriImage"
+            app:layout_constraintStart_toEndOf="@id/sakeBottleX"
+            app:layout_constraintTop_toTopOf="@id/sakeBottleImage" />
+
+        <ImageView
+            android:id="@+id/sakeTokkuriImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/sake_tokkuri"
+            app:layout_constraintEnd_toStartOf="@id/sakeTokkuriX"
+            app:layout_constraintStart_toEndOf="@id/sakeBottleQty"
+            app:layout_constraintTop_toTopOf="@id/sakeImage" />
+
+        <TextView
+            android:id="@+id/sakeTokkuriText"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="180ml"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/sakeTokkuriImage"
+            app:layout_constraintStart_toStartOf="@id/sakeTokkuriImage"/>
+
+        <TextView
+            android:id="@+id/sakeTokkuriX"
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/sakeTokkuriText"
+            app:layout_constraintStart_toEndOf="@id/sakeTokkuriImage"
+            app:layout_constraintEnd_toStartOf="@+id/sakeTokkuriQty"
+            app:layout_constraintTop_toTopOf="@id/sakeTokkuriImage"/>
+
+        <Spinner
+            android:id="@+id/sakeTokkuriQty"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/sakeTokkuriText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sakeTokkuriX"
+            app:layout_constraintTop_toTopOf="@id/sakeTokkuriImage"/>
+
+        <EditText
+            android:id="@+id/sakeQty"
+            android:inputType="number"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/sakeText"
+            app:layout_constraintEnd_toStartOf="@+id/sakeMl"
+            app:layout_constraintStart_toStartOf="@id/sakeBottleImage" />
+
+        <TextView
+            android:id="@+id/sakeMl"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="ml"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/sakeQty"
+            app:layout_constraintTop_toTopOf="@id/sakeQty"/>
+
+        <EditText
+            android:id="@+id/sakePercentage"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/sakeText"
+            app:layout_constraintEnd_toStartOf="@+id/sakePt"
+            app:layout_constraintStart_toStartOf="@id/sakeTokkuriImage" />
+
+        <TextView
+            android:id="@+id/sakePt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="%"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/sakePercentage"
+            app:layout_constraintTop_toTopOf="@id/sakePercentage"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/liquorInput"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sakeInput"
+        app:layout_constraintBottom_toTopOf="@+id/alcoholOutput">
+
+        <ImageView
+            android:id="@+id/liquorBg"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/liquorText"
+            app:layout_constraintEnd_toEndOf="@id/liquorImage"
+            app:layout_constraintStart_toStartOf="@id/liquorImage"
+            app:layout_constraintTop_toTopOf="@+id/liquorImage"
+            android:background="@drawable/rounded_bg_4"/>
+
+        <ImageView
+            android:id="@+id/liquorImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/liquor"
+            app:layout_constraintBottom_toTopOf="@+id/liquorText"
+            app:layout_constraintEnd_toStartOf="@id/liquorBottleImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/liquorText"
+            android:layout_width="60dp"
+            android:layout_height="18dp"
+            android:gravity="center"
+            android:text="liquor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/liquorImage"
+            app:layout_constraintTop_toBottomOf="@+id/liquorImage" />
+
+        <ImageView
+            android:id="@+id/liquorBottleImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/liquor_bottle"
+            app:layout_constraintEnd_toStartOf="@id/liquorBottleX"
+            app:layout_constraintStart_toEndOf="@id/liquorImage"
+            app:layout_constraintTop_toTopOf="@id/liquorImage" />
+
+        <TextView
+            android:id="@+id/liquorBottleText"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="700ml"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/liquorBottleImage"
+            app:layout_constraintStart_toStartOf="@id/liquorBottleImage" />
+
+        <TextView
+            android:id="@+id/liquorBottleX"
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/liquorBottleText"
+            app:layout_constraintEnd_toStartOf="@id/liquorBottleQty"
+            app:layout_constraintStart_toEndOf="@id/liquorBottleImage"
+            app:layout_constraintTop_toTopOf="@id/liquorBottleImage" />
+
+        <Spinner
+            android:id="@+id/liquorBottleQty"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/liquorBottleText"
+            app:layout_constraintEnd_toStartOf="@id/liquorGlassImage"
+            app:layout_constraintStart_toEndOf="@id/liquorBottleX"
+            app:layout_constraintTop_toTopOf="@id/liquorBottleImage" />
+
+        <ImageView
+            android:id="@+id/liquorGlassImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/liquor_glass"
+            app:layout_constraintEnd_toStartOf="@id/liquorGlassX"
+            app:layout_constraintStart_toEndOf="@id/liquorBottleQty"
+            app:layout_constraintTop_toTopOf="@id/liquorImage" />
+
+        <TextView
+            android:id="@+id/liquorGlassText"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="30ml"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/liquorGlassImage"
+            app:layout_constraintStart_toStartOf="@id/liquorGlassImage"/>
+
+        <TextView
+            android:id="@+id/liquorGlassX"
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/liquorGlassText"
+            app:layout_constraintStart_toEndOf="@id/liquorGlassImage"
+            app:layout_constraintEnd_toStartOf="@+id/liquorGlassQty"
+            app:layout_constraintTop_toTopOf="@id/liquorGlassImage"/>
+
+        <Spinner
+            android:id="@+id/liquorGlassQty"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/liquorGlassText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/liquorGlassX"
+            app:layout_constraintTop_toTopOf="@id/liquorGlassImage"/>
+
+        <EditText
+            android:id="@+id/liquorQty"
+            android:inputType="number"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/liquorText"
+            app:layout_constraintEnd_toStartOf="@+id/liquorMl"
+            app:layout_constraintStart_toStartOf="@id/liquorBottleImage" />
+
+        <TextView
+            android:id="@+id/liquorMl"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="ml"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/liquorQty"
+            app:layout_constraintTop_toTopOf="@id/liquorQty"/>
+
+        <EditText
+            android:id="@+id/liquorPercentage"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/liquorText"
+            app:layout_constraintEnd_toStartOf="@+id/liquorPt"
+            app:layout_constraintStart_toStartOf="@id/liquorGlassImage" />
+
+        <TextView
+            android:id="@+id/liquorPt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="%"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/liquorPercentage"
+            app:layout_constraintTop_toTopOf="@id/liquorPercentage"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/alcoholOutput"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/liquorInput"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/totalAlcoholText"
+            android:layout_width="160dp"
+            android:layout_height="20dp"
+            android:gravity="center_vertical|left"
+            android:text="@string/total_alcohol"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintEnd_toStartOf="@id/totalAlcoholOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bloodAlcoholText"/>
+
+        <TextView
+            android:id="@+id/totalAlcoholOutput"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintEnd_toStartOf="@id/totalAlcoholUnit"
+            app:layout_constraintStart_toEndOf="@+id/totalAlcoholText"
+            app:layout_constraintTop_toTopOf="@+id/totalAlcoholText" />
+
+        <TextView
+            android:id="@+id/totalAlcoholUnit"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="g"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintStart_toEndOf="@+id/totalAlcoholOutput"
+            app:layout_constraintTop_toTopOf="@+id/totalAlcoholText" />
+
+        <TextView
+            android:id="@+id/bloodAlcoholText"
+            android:layout_width="160dp"
+            android:layout_height="20dp"
+            android:gravity="center_vertical|left"
+            android:text="@string/blood_alcohol"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toStartOf="@id/bloodAlcoholOutput"
+            app:layout_constraintStart_toStartOf="@+id/totalAlcoholText"
+            app:layout_constraintTop_toBottomOf="@+id/totalAlcoholText"
+            app:layout_constraintBottom_toTopOf="@+id/decompositionTimeText"/>
+
+        <TextView
+            android:id="@+id/bloodAlcoholOutput"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintEnd_toStartOf="@id/bloodAlcoholUnit"
+            app:layout_constraintStart_toEndOf="@+id/bloodAlcoholText"
+            app:layout_constraintTop_toTopOf="@+id/bloodAlcoholText" />
+
+        <TextView
+            android:id="@+id/bloodAlcoholUnit"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="%"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintStart_toEndOf="@+id/bloodAlcoholOutput"
+            app:layout_constraintTop_toTopOf="@+id/bloodAlcoholText" />
+
+        <TextView
+            android:id="@+id/decompositionTimeText"
+            android:layout_width="160dp"
+            android:layout_height="20dp"
+            android:gravity="center_vertical|left"
+            android:text="@string/decomposition_time"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toStartOf="@id/decompositionTimeOutput"
+            app:layout_constraintStart_toStartOf="@+id/totalAlcoholText"
+            app:layout_constraintTop_toBottomOf="@+id/bloodAlcoholText"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/decompositionTimeOutput"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:background="@drawable/black_frame"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintEnd_toStartOf="@id/decompositionTimeUnit"
+            app:layout_constraintStart_toEndOf="@+id/decompositionTimeText"
+            app:layout_constraintTop_toTopOf="@+id/decompositionTimeText" />
+
+        <TextView
+            android:id="@+id/decompositionTimeUnit"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="h"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintStart_toEndOf="@+id/decompositionTimeOutput"
+            app:layout_constraintTop_toTopOf="@+id/decompositionTimeText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:src="@drawable/gear"
+        app:backgroundTint="@color/blue"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:src="@drawable/home"
+        app:backgroundTint="@color/blue"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

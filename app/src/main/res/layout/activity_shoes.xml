@@ -8,13 +8,13 @@
     tools:context=".CalendarActivity">
 
     <TextView
-        android:id="@+id/ageHeaderText"
-        android:layout_width="35dp"
+        android:id="@+id/japaneseShoeSizeHeaderText"
+        android:layout_width="50dp"
         android:layout_height="30dp"
-        android:text="@string/age"
+        android:text="JP"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:gravity="right|center_vertical"
+        android:gravity="center_horizontal|center_vertical"
         android:layout_marginTop="0dp"
         android:layout_marginStart="40dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,46 +22,46 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/westernYearHeaderText"
+        android:id="@+id/europeShoeSizeHeaderText"
         android:layout_width="50dp"
         android:layout_height="30dp"
-        android:text="@string/ad"
+        android:text="EU"
         android:textSize="16sp"
         android:textStyle="bold"
         android:gravity="center_horizontal|center_vertical"
-        app:layout_constraintTop_toTopOf="@+id/ageHeaderText"
-        app:layout_constraintStart_toEndOf="@+id/ageHeaderText"
-        app:layout_constraintEnd_toStartOf="@+id/japaneseEraHeaderText"/>
+        app:layout_constraintTop_toTopOf="@+id/japaneseShoeSizeHeaderText"
+        app:layout_constraintStart_toEndOf="@+id/japaneseShoeSizeHeaderText"
+        app:layout_constraintEnd_toStartOf="@+id/usaMensShoeSizeHeaderText"/>
 
     <TextView
-        android:id="@+id/japaneseEraHeaderText"
-        android:layout_width="30dp"
+        android:id="@+id/usaMensShoeSizeHeaderText"
+        android:layout_width="50dp"
         android:layout_height="30dp"
-        android:text="@string/jp1"
+        android:text="US M"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:gravity="right|center_vertical"
-        app:layout_constraintTop_toTopOf="@+id/ageHeaderText"
-        app:layout_constraintEnd_toStartOf="@+id/japaneseYearHeaderText"
-        app:layout_constraintHorizontal_chainStyle="packed"/>
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintTop_toTopOf="@+id/japaneseShoeSizeHeaderText"
+        app:layout_constraintStart_toEndOf="@+id/europeShoeSizeHeaderText"
+        app:layout_constraintEnd_toStartOf="@+id/usaWomensShoeSizeHeaderText" />
 
     <TextView
-        android:id="@+id/japaneseYearHeaderText"
-        android:layout_width="30dp"
+        android:id="@+id/usaWomensShoeSizeHeaderText"
+        android:layout_width="50dp"
         android:layout_height="30dp"
-        android:text="@string/jp2"
+        android:text="US W"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:gravity="left|center_vertical"
+        android:gravity="center_horizontal|center_vertical"
         android:layout_marginEnd="40dp"
-        app:layout_constraintTop_toTopOf="@+id/ageHeaderText"
+        app:layout_constraintTop_toTopOf="@+id/japaneseShoeSizeHeaderText"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/ageHeaderText"/>
+        app:layout_constraintTop_toBottomOf="@+id/japaneseShoeSizeHeaderText"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/setting"

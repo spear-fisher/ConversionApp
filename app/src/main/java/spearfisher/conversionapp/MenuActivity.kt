@@ -21,18 +21,8 @@ class MenuActivity : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.calendarButton.setOnClickListener {
-            val intent = Intent(applicationContext, CalendarActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.timeButton.setOnClickListener {
-            val intent = Intent(applicationContext, TimeActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.phoneButton.setOnClickListener {
-            val intent = Intent(applicationContext, PhoneActivity::class.java)
+        binding.setting.setOnClickListener {
+            val intent = Intent(applicationContext, EntryActivity::class.java)
             startActivity(intent)
         }
 
@@ -40,6 +30,23 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, MeasureActivity::class.java)
             startActivity(intent)
         }
+
+        binding.calendarButton.setOnClickListener {
+            val intent = Intent(applicationContext, CalendarActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.shoesButton.setOnClickListener {
+            val intent = Intent(applicationContext, ShoesActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.alcoholButton.setOnClickListener {
+            val intent = Intent(applicationContext, AlcoholActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
     }
 

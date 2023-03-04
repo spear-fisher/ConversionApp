@@ -8,41 +8,157 @@
     tools:context=".EntryActivity">
 
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/SettingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
         android:fontFamily="sans-serif-thin"
-        android:text="Welcome!"
-        android:textSize="48sp"
+        android:text="SETTING"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/birthYearText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/birthdayButton"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:text="誕生日入力"
-        app:layout_constraintLeft_toLeftOf="@+id/welcomeText"
-        app:layout_constraintRight_toRightOf="@+id/welcomeText"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+    <TextView
+        android:id="@+id/birthYearText"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical|left"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/birth_year"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/shoeSizeText"
+        app:layout_constraintEnd_toStartOf="@id/birthYearPicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SettingText" />
+
+    <TextView
+        android:id="@+id/birthYearPicker"
+        android:layout_width="100dp"
+        android:layout_height="30sp"
+        android:paddingLeft="8dp"
+        android:gravity="center_vertical|left"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/black_frame"
+        app:layout_constraintEnd_toStartOf="@+id/birthYearUnit"
+        app:layout_constraintStart_toEndOf="@+id/birthYearText"
+        app:layout_constraintTop_toTopOf="@id/birthYearText" />
+
+    <TextView
+        android:id="@+id/birthYearUnit"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical|left"
+        android:fontFamily="sans-serif-thin"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/birthYearPicker"
+        app:layout_constraintTop_toTopOf="@id/birthYearText" />
+
+    <TextView
+        android:id="@+id/shoeSizeText"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical|left"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/shoe_size"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/bodyWeightText"
+        app:layout_constraintEnd_toStartOf="@id/birthYearPicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthYearText" />
+
+    <Spinner
+        android:id="@+id/shoeSizeSpinner"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:background="@drawable/black_frame"
+        app:layout_constraintEnd_toStartOf="@+id/shoeSizeUnit"
+        app:layout_constraintStart_toEndOf="@+id/shoeSizeText"
+        app:layout_constraintTop_toTopOf="@id/shoeSizeText"/>
+
+    <TextView
+        android:id="@+id/shoeSizeUnit"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical|left"
+        android:fontFamily="sans-serif-thin"
+        android:text="cm"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shoeSizeSpinner"
+        app:layout_constraintTop_toTopOf="@id/shoeSizeText" />
+
+    <TextView
+        android:id="@+id/bodyWeightText"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical|left"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/body_weight"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintEnd_toStartOf="@id/bodyWeightEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shoeSizeText" />
+
+    <EditText
+        android:id="@+id/bodyWeightEdit"
+        android:inputType="numberDecimal"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:paddingLeft="8dp"
+        android:textSize="16sp"
+        android:background="@drawable/black_frame"
+        app:layout_constraintEnd_toStartOf="@+id/bodyWeightUnit"
+        app:layout_constraintStart_toEndOf="@+id/bodyWeightText"
+        app:layout_constraintTop_toTopOf="@id/bodyWeightText"/>
+    
+    <TextView
+        android:id="@id/bodyWeightUnit"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical|left"
+        android:fontFamily="sans-serif-thin"
+        android:text="kg"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bodyWeightEdit"
+        app:layout_constraintTop_toTopOf="@id/bodyWeightText" />
 
     <Button
-        android:id="@+id/startButton"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:text="START"
-        app:layout_constraintLeft_toLeftOf="@+id/welcomeText"
-        app:layout_constraintRight_toRightOf="@+id/welcomeText"
-        app:layout_constraintTop_toBottomOf="@+id/birthdayButton" />
+        android:id="@+id/saveButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:fontFamily="sans-serif-thin"
+        android:text="SAVE"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/image_button_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyWeightText" />
+
+    <TextView
+        android:id="@+id/SettingFootnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/setting_footnote"
+        android:textSize="14sp"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/bodyWeightText"
+        app:layout_constraintTop_toBottomOf="@id/saveButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:id="@+id/japaneseShoeSizeTextView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:text="0"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/europeShoeSizeTextView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:text="1988"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="@+id/japaneseShoeSizeTextView"
+        app:layout_constraintStart_toEndOf="@+id/japaneseShoeSizeTextView"
+        app:layout_constraintEnd_toStartOf="@+id/usaMensShoeSizeTextView"/>
+
+    <TextView
+        android:id="@+id/usaMensShoeSizeTextView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:text="年号"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="@+id/japaneseShoeSizeTextView"
+        app:layout_constraintStart_toEndOf="@+id/europeShoeSizeTextView"
+        app:layout_constraintEnd_toStartOf="@+id/usaWomensShoeSizeTextView" />
+
+    <TextView
+        android:id="@+id/usaWomensShoeSizeTextView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:text="63"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintTop_toTopOf="@+id/japaneseShoeSizeTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
