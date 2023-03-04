@@ -23,6 +23,9 @@ class EntryActivity : AppCompatActivity(), NumberPickerDialog.NoticeDialogListen
     private var userShoeSize = 22.0
     private var bodyWeight = 0.0
 
+    override fun onBackPressed(){
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEntryBinding.inflate(layoutInflater)
